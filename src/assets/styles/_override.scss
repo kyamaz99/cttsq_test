@@ -1,0 +1,109 @@
+/*override*/
+button:focus,.btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn.active.focus {
+    outline:none;
+    outline-color: transparent;
+    outline-style: none;
+    outline-width: 0;
+    outline-offset: -2px;
+}
+
+.option__value,.color--active, .display__input--label, .mat-select-value, input{
+    color: $active;
+}
+mat-form-field{
+    .mat-form-field-underline {
+        background-color: $active;
+    }
+    .mat-input-infix, .mat-form-field-label{
+        color:$active;
+    }
+}
+.card{
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
+}
+dl {
+    margin-bottom: 0;
+}
+ .navbar-inverse .form-control[type=text]:focus {
+    box-shadow: inset 0 -1px 0 transparent;
+}
+
+.mat-whiteframe-1dp, .mat-whiteframe-z1 {
+    box-shadow: none;
+    border-bottom: 1px solid rgba(0,0,0,0.12);
+}
+
+.select--equipment{
+    font-size: 1.2rem;
+}
+
+ul, menu, dir {
+    display: block;
+    list-style-type: disc;
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 0;
+}
+button.btn:focus {
+    background: transparent;
+    box-shadow: none;
+    text-decoration: none;
+}
+
+a{
+    font-weight: 400;
+    color:$link;
+}
+a:hover, a:focus {
+    text-decoration: none;
+}
+
+
+.editable-wrap.editable-select,.editable-controls,.editable-input{
+    width: 100%
+}
+.editable-controls{
+    display: inline-block;
+    font-size: 1.4rem;
+}
+ input.form-control, input[type=text], input[type=password], input[type=email], input[type=number], [type=text].form-control, [type=password].form-control, [type=email].form-control, [type=tel].form-control, [contenteditable].form-control {
+ font-size: 1.3rem
+ }
+
+.mat-select-value-text{
+    font-size: 1.2rem;
+}
+
+.nav > li > a:hover, .nav > li > a:focus {
+    text-decoration: none;
+}
+a:focus {
+    box-shadow: none;
+}
+summary:focus{
+    outline: none;
+}
+
+
+ol ol, ol ul, ul ol, ul ul {
+    margin: 0;
+}
+div.mydp, .mydp .selection, input, .mydp .headertodaybtn{
+    border: none;
+}
+
+.mat-select-trigger,.mat-select-value {
+    height: initial;
+    .mat-select-placeholder{
+        font-size: 1.3rem;
+    }
+}
+
+.mat-select-content{
+    .mat-option-text{
+        font-size: 1.3rem;
+    }
+}
+

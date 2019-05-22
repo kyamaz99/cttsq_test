@@ -1,0 +1,184 @@
+.rmv-padding{
+  padding: 0
+}
+.rmv-lpadding{
+  padding-left: 0
+}
+
+.rmv-rpadding{
+  padding-right: 0
+}
+.rmv-margin{
+  margin: 0
+}
+.rmv-margin--left{
+  margin-left: 0;
+}
+.rmv-margin-v{
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.flex{
+  display: flex
+}
+
+.relative{
+  position: relative;
+}
+
+.list-center
+{
+  display: inline-block;
+  text-align: left;
+  margin: 0 auto;
+}
+.inline{
+  display: inline-block;
+}
+.align-right{
+  display: flex;
+  justify-content: flex-end;
+}
+
+
+.flex--center--height{
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.v-height{
+   min-height: 100vh;
+}
+.list-unstyled{
+    list-style: none;
+}
+.no-margin{
+    margin: 0;
+}
+.no-padding{
+    padding: 0
+}
+.flex--col{
+    display: flex;
+    flex-direction: column;
+}
+.flex-stretch--h{
+    display: flex;
+    flex: 1;
+}
+.component__flex{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.flex--around{
+     justify-content: space-around
+}
+.flex--right{
+    justify-content: flex-end;
+}
+.flex--justify{
+    justify-content: center;
+}
+.flex-one{
+  display: flex;
+  flex: 1;  
+}
+.flex-one--wrap{
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  
+}
+.flex__page-wrap{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  width: 100%;
+}
+.flex-extend--h{
+  flex: 1;
+}
+.flex--right{
+  display: flex;
+  justify-content: flex-end;
+}
+.flex--space-around{
+  display: flex;
+  justify-content: space-around;
+}
+.full-width{
+  width: 100%;
+}
+.half-width{
+  width: 50%;
+}
+
+.margin-auto{
+  margin: 0 auto;
+}
+.list--space-around{
+    display: flex;
+    justify-content: space-around;
+}
+
+.disabled, input[disabled]{
+  pointer-events: none;
+}
+
+.txt-center{
+  text-align: center;
+}
+.overflow-auto{
+  overflow:auto;
+}
+.overflow-hidden{
+  overflow:hidden;
+}
+.flex--wrap{
+  display: flex;
+  flex-wrap: wrap;
+}
+.ready-only{
+  pointer-events: nnone;
+}
+.flex--center{
+  display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header--border-bottom{
+        border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+.list--center{
+    display: inline-block;
+    text-align: left;
+    margin: 0 auto;
+}
+.pointer--none{
+  pointer-events: none;
+}
+.enabled{
+  position: relative;
+  pointer-events: initial;
+  z-index: 9999;
+}
+padding--bottom{
+  padding-bottom:0;
+}
+.bg--white{
+  background: white;  
+}
+.max-width{
+  max-width: $max-width;
+  margin: 0 auto;
+}
+
+.actions__to-right{
+  display: flex;
+  align-items: center;
+  flex: 1;
+  justify-content: flex-end;
+}

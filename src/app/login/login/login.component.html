@@ -1,0 +1,129 @@
+<div class="container">
+  <aside class="form__aside">
+      <h2  class="form__heading"> cool stuff.maybe not  </h2>
+    <footer class="form__footer">
+      <a href="" class="footer__link">
+        terms and condition
+      </a>
+    </footer>
+  </aside>
+
+  <main class="form__wrap">
+      <header class="form__header">
+          <h1 class="title---form">{{'SIGNIN.TITLE' | translate }}</h1>
+      </header>
+      <form
+        action=""
+        #f="ngForm"
+        class="form__content"
+        novalidate
+        [formGroup]="form"
+        (ngSubmit)="onSubmit()"
+      >
+          <mat-form-field class="form-group">
+              <input
+                matInput
+                formControlName="username"
+                placeholder="username"
+                name="username"
+                class="form-input"
+                type="text"
+                required
+              />
+              <i class="mi mi-Contact icon--form"></i>
+            <div
+              *ngIf="
+                !form.controls['username'].valid &&
+                form.controls['username'].touched
+              "
+            >
+              <div
+                class="login-form__invalid"
+                *ngIf="form.controls['username'].hasError('required')"
+              >
+                <p class="login-form__invalid-msg">
+                  champ obligatoire
+                </p>
+              </div>
+              <div
+                class="login-form__invalid"
+                *ngIf="form.controls['username'].hasError('minlength')"
+              >
+                <p class="login-form__invalid-msg">
+                  le champ doit comporter au minimum 2 charact&egrave;res
+                </p>
+              </div>
+            </div>
+          </mat-form-field>
+          <mat-form-field class="form-group">
+              <input
+                formControlName="password"
+                matInput
+                name="password"
+                placeholder="password"
+                class="form-input"
+                type="password"
+                required
+              />
+              <i class="mi mi-Lock icon--form"></i>
+            <div
+              *ngIf="
+                !form.controls['password'].valid &&
+                form.controls['password'].touched
+              "
+            >
+              <div
+                class="login-form__invalid"
+                *ngIf="form.controls['username'].hasError('required')"
+              >
+                <p class="login-form__invalid-msg">
+                  champ obligatoire
+                </p>
+              </div>
+              <div
+                class="login-form__invalid"
+                *ngIf="form.controls['password'].hasError('minlength')"
+              >
+                <p class="login-form__invalid-msg">
+                  le champ doit comporter au minimum 1 charact&egrave;res
+                </p>
+              </div>
+              <div
+                class="login-form__invalid"
+                *ngIf="form.controls['password'].hasError('invalid')"
+              >
+                <p class="login-form__invalid-msg">
+                  champ invalide
+                </p>
+              </div>
+            </div>
+          </mat-form-field>
+        <div class="form__submit">
+          <button
+            id="submit"
+            class="form__btn"
+            [ngClass]="{ 'isDisabled':form.disabled,  'isFailed':failed  }"
+            [disabled]="!form.valid || form.disabled"
+            type="submit"
+          >
+            <span *ngIf="!failed; fail">
+              log in
+              <i
+                *ngIf="sending"
+                class="mi mi-Refresh mi-spin icon--submitting"
+              ></i>
+            </span>
+            <span *ngIf="failed">
+              user or password unknown
+              <i class="mi mi-ErrorBadge12 icon--submitting"></i>
+            </span>
+          </button>
+        </div>
+      </form>
+      <footer class="form__footer">
+          <a href="#" class="footer__link--color">
+            forgot your password?
+          </a>
+      </footer>
+  </main>
+</div>

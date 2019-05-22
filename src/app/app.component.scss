@@ -1,0 +1,64 @@
+@import "~src/assets/styles/components/_variables";
+@import "~src/assets/styles/components/_utils";
+
+
+.main__layout{
+    display: flex;
+    flex: 1;
+}
+//page
+ .page__wrap, .page__header{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+.page__header{
+    flex: initial;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 2rem;
+}
+.title--page{
+    display: flex;
+    flex-basis: 90%;
+    justify-content: center;
+    font-size: $h1-size;
+    color: $blue;
+}
+.page__content{
+    background: $light_grey;
+}
+
+//search movies
+.result__wrap, .result__items{
+    display: flex;
+    flex-direction: column;
+    flex:1;
+}
+.result__item{
+    padding: 1.3rem 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    &:hover{
+        cursor: pointer;
+        background: $grey-hover;
+        .result__content{
+            color: $blue;
+        }
+    }
+    &:nth-child(even){
+        background-color: darken($light_grey, 4%) ;
+    }
+
+}
+.result__content{
+    font-size: 1.5rem;
+    display: flex;
+    flex-basis: 10%;
+    
+    &:first-child{
+        flex-basis: 80%;
+    }
+}
+

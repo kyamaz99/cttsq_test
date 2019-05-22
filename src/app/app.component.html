@@ -1,0 +1,10 @@
+<div class="container v-height no-padding relative ">
+  <div class="main__layout v-height">
+      <div class="flex--col no-padding flex-extend--h content--main"
+          [@fadeInAnimation]="getRouteAnimation(route)">
+          <router-outlet #route="outlet"></router-outlet>
+      </div>
+  </div>
+<!--   <server-response [msg]="server$| async"></server-response> 
+ --></div>
+
