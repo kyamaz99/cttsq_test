@@ -18,6 +18,7 @@ import { NgxsReduxDevtoolsPluginModule } from "@ngxs/devtools-plugin";
 
 import { environment } from "src/environments/environment.prod";
 import { UserState } from "@user/shared/store/user.state";
+import { SharedModule } from "./shared/shared.module";
 
 // AoT requires an exported function for factories
 export function TanslateLoaderFactory(http: HttpClient) {
@@ -28,6 +29,7 @@ export function TanslateLoaderFactory(http: HttpClient) {
   declarations: [AppComponent],
   imports: [
     CommonModule,
+    SharedModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     LoginModule,

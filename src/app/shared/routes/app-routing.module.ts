@@ -10,6 +10,7 @@ import { RoutesGuardService } from "./routes.guard.service";
 import { TranslateService } from "@ngx-translate/core";
 import { LocalizeRouterModule, LocalizeParser, LocalizeRouterSettings } from "localize-router";
 import { Location } from "@angular/common";
+import { NotFoundComponent } from "@components/not-found/not-found.component";
 const ROUTES: Routes = [
   {
     path: "login",
@@ -18,13 +19,16 @@ const ROUTES: Routes = [
 
   {
     path: "",
-
     canActivate: [RoutesGuardService],
     loadChildren: "./../../user/user.module#UserModule"
   },
-
-  { path: "", redirectTo: `/`, pathMatch: "full" },
-  { path: "**", redirectTo: `/`, pathMatch: "full" }
+  {
+    path: "404",
+    pathMatch: "full",
+    canActivate: [RoutesGuardService],
+    component: NotFoundComponent
+  },
+  { path: "**", redirectTo: `/404`, pathMatch: "full" }
 ];
 // Required for AoT
 //had to export them also
