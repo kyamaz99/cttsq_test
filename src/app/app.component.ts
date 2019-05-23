@@ -1,12 +1,7 @@
 import { AppLng } from "./shared/state/state";
 import { Router, ActivatedRoute } from "@angular/router";
 import { Subject } from "rxjs";
-import {
-  Component,
-  OnInit,
-  ChangeDetectionStrategy,
-  OnDestroy
-} from "@angular/core";
+import { Component, OnInit, ChangeDetectionStrategy, OnDestroy } from "@angular/core";
 import { WindowRef } from "./win_ref";
 import { fadeInAnimation } from "./shared/animations/animations";
 import { TranslateService } from "@ngx-translate/core";
@@ -24,10 +19,7 @@ export const DEFAULT_APP_LNG: "ge" | "en" = "ge";
 export class AppComponent implements OnInit, OnDestroy {
   public server$ = new Subject();
   constructor(
-    private _router: Router,
-    private winRef: WindowRef,
     //  private _notifyResponseService: NotifyResponseService,
-    private route: ActivatedRoute,
     private _translate: TranslateService,
     private _localizeRouter: LocalizeRouterService
   ) {
@@ -46,9 +38,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     //  this.subServerResp();
-    this._localizeRouter.routerEvents
-      .pipe(tap(lg => this.useLanguage(lg)))
-      .subscribe();
+    this._localizeRouter.routerEvents.pipe(tap(lg => this.useLanguage(lg))).subscribe();
   }
   subServerResp(): any {
     /*    return this._notifyResponseService.server_response$.subscribe(r =>

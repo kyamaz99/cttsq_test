@@ -1,0 +1,57 @@
+@import "~src/assets/styles/components/_variables";
+
+.header {
+  background-color: #b300c3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.link {
+  align-self: flex-start;
+  color: white;
+  padding: 20px;
+}
+.figure {
+  width: 200px;
+}
+.avatar__img {
+  height: auto;
+  max-width: 100%;
+  border-radius: 50%;
+}
+.figure__text {
+  color: white;
+  font-weight: 600;
+  text-align: center;
+}
+
+//main
+
+.title--main {
+  text-align: center;
+  font-size: 25px;
+}
+.card__container {
+  display: grid;
+  padding: 20px;
+  grid-template-columns: repeat(3, 33%);
+  grid-column-gap: 15px;
+  grid-row-gap: 15px;
+  background-color: $light_grey;
+}
+.card__footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px;
+}
+.card__create {
+  font-size: 12px;
+}
+.mat-card-title {
+  color: $color;
+}
+.card__content {
+  padding: 10px;
+}

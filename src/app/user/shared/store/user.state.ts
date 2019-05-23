@@ -3,21 +3,23 @@ import { User, Repo } from "./../models/index";
 import { Action, StateContext, State, Store } from "@ngxs/store";
 import { Selector } from "@ngxs/store";
 import { ActionType } from "@models/index";
-import { UsersFetchAction, UsersSetAction, UsersGetRepoAction, UsersSetRepoAction } from "./user.actions";
-import { tap, catchError, filter } from "rxjs/operators";
+import { UsersFetchAction, UsersSetAction, UsersDataLoadedAction } from "./user.actions";
+import { tap, catchError, filter, delay } from "rxjs/operators";
 import { UserService } from "@user/shared/services/user.service";
 import { HttpErrorResponse } from "@angular/common/http";
 
 interface UserStore {
   users: Array<User>;
-  repos: Array<Repo>;
   error: boolean;
+  data_loaded: boolean;
+  query: string;
 }
 
 const INITIAL_STATE: UserStore = {
   users: [],
-  repos: [],
-  error: false
+  error: false,
+  data_loaded: false,
+  query: null
 };
 
 @State<UserStore>({
@@ -25,28 +27,37 @@ const INITIAL_STATE: UserStore = {
   defaults: INITIAL_STATE
 })
 export class UserState {
-  constructor(private _userService: UserService, private _store: Store) {
-    console.log("storer");
-  }
+  constructor(private _userService: UserService, private _store: Store) {}
   @Selector()
   static getUsers(state: UserStore): Array<User> {
     return state.users;
   }
   @Selector()
-  static getRepos(state: UserStore): Array<Repo> {
-    return state.repos;
+  static getUserQuery(state: UserStore): string {
+    return state.query;
+  }
+
+  @Selector()
+  static getUserError(state: UserStore): boolean {
+    return state.error;
   }
   @Selector()
-  static getError(state: UserStore): boolean {
-    return state.error;
+  static getUserDataLoaded(state: UserStore): boolean {
+    return state.data_loaded;
   }
 
   @Action(UsersFetchAction)
-  fetchUser(context: StateContext<UserStore>, action: ActionType<string>): void {
-    const { payload } = action;
+  fetchUser(context: StateContext<UserStore>, { payload }: ActionType<string>): void {
+    const current = context.getState();
+    context.setState({
+      ...current,
+      query: payload
+    });
+
     this._userService
       .getUsers(payload)
       .pipe(
+        tap(res => context.dispatch(new UsersDataLoadedAction(true))),
         catchError((err: HttpErrorResponse) => {
           console.error(err);
           const current = context.getState();
@@ -54,7 +65,6 @@ export class UserState {
             ...current,
             error: true
           });
-
           return of(false);
         }),
         filter((res: Array<User>) => !!res),
@@ -63,43 +73,20 @@ export class UserState {
       .subscribe();
   }
   @Action(UsersSetAction)
-  setUser({ getState, setState }: StateContext<UserStore>, action: ActionType<Array<User>>): void {
+  setUser({ getState, setState }: StateContext<UserStore>, { payload }: ActionType<Array<User>>): void {
     const current = getState();
-    const { payload } = action;
     setState({
       ...current,
       users: payload
     });
   }
 
-  //repos
-
-  @Action(UsersGetRepoAction)
-  getRepo(context: StateContext<UserStore>, action: ActionType<number>): void {
-    const { payload } = action;
-    this._userService
-      .getRepo(payload)
-      .pipe(
-        catchError((err: HttpErrorResponse) => {
-          const current = context.getState();
-          context.setState({
-            ...current,
-            error: true
-          });
-          return of(false);
-        }),
-        filter((res: Array<Repo>) => !!res),
-        tap(res => context.dispatch(new UsersSetRepoAction(res)))
-      )
-      .subscribe();
-  }
-  @Action(UsersSetRepoAction)
-  setRepo({ getState, setState }: StateContext<UserStore>, action: ActionType<Array<Repo>>): void {
+  @Action(UsersDataLoadedAction)
+  dataLoaded({ getState, setState }: StateContext<UserStore>, { payload }: ActionType<boolean>): void {
     const current = getState();
-    const { payload } = action;
     setState({
       ...current,
-      repos: payload
+      data_loaded: payload
     });
   }
 }

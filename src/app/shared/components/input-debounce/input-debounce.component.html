@@ -1,3 +1,6 @@
-<mat-form-field>
-  <input matInput [formControl]="filterCtrl" placeholder="Filter" />
+<mat-form-field class="input__wrap">
+  <input matInput placeholder="search user in github" [formControl]="filterCtrl" />
 </mat-form-field>
+<div class="icon__wrap">
+  <mat-progress-spinner color="white" mode="indeterminate" [diameter]="spinnerSize"></mat-progress-spinner>
+</div>

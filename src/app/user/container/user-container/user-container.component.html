@@ -1,3 +1,12 @@
-<input-debounce (onInputChange)="handleInputChange($event)"></input-debounce>
-
-<user-list [data]="users$ | async"></user-list>
+<div class="container--row">
+  <section class="flex--center">
+    <input-debounce
+      [query]="query$ | async"
+      [loaded]="dataLoaded$ | async"
+      (onInputChange)="handleInputChange($event)"
+    ></input-debounce>
+  </section>
+  <main class="main">
+    <user-list [data]="users$ | async"></user-list>
+  </main>
+</div>

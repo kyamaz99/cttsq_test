@@ -11,11 +11,16 @@ export class UsersSetAction {
   constructor(public payload: Array<User>) {}
 }
 
-export class UsersGetRepoAction {
+/* export class UsersGetRepoAction {
   static readonly type = "[User] get repo";
   constructor(public payload: number) {}
 }
 export class UsersSetRepoAction {
   static readonly type = "[User] set repo";
   constructor(public payload: Array<Repo>) {}
+}
+ */
+export class UsersDataLoadedAction {
+  static readonly type = "[User] data loaded";
+  constructor(public payload: boolean) {}
 }

@@ -1,182 +1,182 @@
-.rmv-padding{
-  padding: 0
-}
-.rmv-lpadding{
-  padding-left: 0
+.container--row {
+  display: grid;
+  grid-template-rows: 200px auto;
+  height: 100vh;
 }
 
-.rmv-rpadding{
-  padding-right: 0
+.rmv-padding {
+  padding: 0;
 }
-.rmv-margin{
-  margin: 0
+.rmv-lpadding {
+  padding-left: 0;
 }
-.rmv-margin--left{
+
+.rmv-rpadding {
+  padding-right: 0;
+}
+.rmv-margin {
+  margin: 0;
+}
+.rmv-margin--left {
   margin-left: 0;
 }
-.rmv-margin-v{
+.rmv-margin-v {
   margin-top: 0;
   margin-bottom: 0;
 }
-.flex{
-  display: flex
+.flex {
+  display: flex;
 }
 
-.relative{
+.relative {
   position: relative;
 }
 
-.list-center
-{
+.list-center {
   display: inline-block;
   text-align: left;
   margin: 0 auto;
 }
-.inline{
+.inline {
   display: inline-block;
 }
-.align-right{
+.align-right {
   display: flex;
   justify-content: flex-end;
 }
 
-
-.flex--center--height{
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+.flex--center--height {
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
-.v-height{
-   min-height: 100vh;
+.v-height {
+  min-height: 100vh;
 }
-.list-unstyled{
-    list-style: none;
+.list-unstyled {
+  list-style: none;
 }
-.no-margin{
-    margin: 0;
+.no-margin {
+  margin: 0;
 }
-.no-padding{
-    padding: 0
+.no-padding {
+  padding: 0;
 }
-.flex--col{
-    display: flex;
-    flex-direction: column;
+.flex--col {
+  display: flex;
+  flex-direction: column;
 }
-.flex-stretch--h{
-    display: flex;
-    flex: 1;
+.flex-stretch--h {
+  display: flex;
+  flex: 1;
 }
-.component__flex{
+.component__flex {
   width: 100%;
   display: flex;
   flex-direction: column;
   flex: 1;
 }
-.flex--around{
-     justify-content: space-around
+.flex--around {
+  justify-content: space-around;
 }
-.flex--right{
-    justify-content: flex-end;
+.flex--right {
+  justify-content: flex-end;
 }
-.flex--justify{
-    justify-content: center;
+.flex--justify {
+  justify-content: center;
 }
-.flex-one{
+.flex-one {
   display: flex;
-  flex: 1;  
+  flex: 1;
 }
-.flex-one--wrap{
+.flex-one--wrap {
   display: flex;
   flex: 1;
   flex-wrap: wrap;
-  
 }
-.flex__page-wrap{
+.flex__page-wrap {
   display: flex;
   flex-direction: column;
   flex: 1;
   width: 100%;
 }
-.flex-extend--h{
+.flex-extend--h {
   flex: 1;
 }
-.flex--right{
+.flex--right {
   display: flex;
   justify-content: flex-end;
 }
-.flex--space-around{
+.flex--space-around {
   display: flex;
   justify-content: space-around;
 }
-.full-width{
+.full-width {
   width: 100%;
 }
-.half-width{
+.half-width {
   width: 50%;
 }
 
-.margin-auto{
+.margin-auto {
   margin: 0 auto;
 }
-.list--space-around{
-    display: flex;
-    justify-content: space-around;
+.list--space-around {
+  display: flex;
+  justify-content: space-around;
 }
 
-.disabled, input[disabled]{
+.disabled,
+input[disabled] {
   pointer-events: none;
 }
 
-.txt-center{
+.txt-center {
   text-align: center;
 }
-.overflow-auto{
-  overflow:auto;
+.overflow-auto {
+  overflow: auto;
 }
-.overflow-hidden{
-  overflow:hidden;
+.overflow-hidden {
+  overflow: hidden;
 }
-.flex--wrap{
+.flex--wrap {
   display: flex;
   flex-wrap: wrap;
 }
-.ready-only{
+.ready-only {
   pointer-events: nnone;
 }
-.flex--center{
+.flex--center {
   display: flex;
-    justify-content: center;
-    align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 
-.header--border-bottom{
-        border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+.header--border-bottom {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
 }
-.list--center{
-    display: inline-block;
-    text-align: left;
-    margin: 0 auto;
+.list--center {
+  display: inline-block;
+  text-align: left;
+  margin: 0 auto;
 }
-.pointer--none{
+.pointer--none {
   pointer-events: none;
 }
-.enabled{
+.enabled {
   position: relative;
   pointer-events: initial;
   z-index: 9999;
 }
-padding--bottom{
-  padding-bottom:0;
+padding--bottom {
+  padding-bottom: 0;
 }
-.bg--white{
-  background: white;  
-}
-.max-width{
-  max-width: $max-width;
-  margin: 0 auto;
+.bg--white {
+  background: white;
 }
 
-.actions__to-right{
+.actions__to-right {
   display: flex;
   align-items: center;
   flex: 1;

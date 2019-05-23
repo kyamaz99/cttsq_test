@@ -1,3 +1,13 @@
-<div *ngFor="let d of data">
-  {{ d | json }}
-</div>
+<mat-list class="list__wrap mat-elevation-z1">
+  <h3 mat-subheader>Results</h3>
+
+  <mat-list-item *ngFor="let d of data">
+    <img matListAvatar [src]="d.avatar_url" alt="{{ d.login }}" />
+
+    <h4 mat-line>{{ d.login }}</h4>
+    <a mat-button href="{{ d.html_url }}">github </a>
+
+    <a mat-button class="link" [routerLink]="['/', 'en', d.id, 'repos']"> repos</a>
+    <mat-divider></mat-divider>
+  </mat-list-item>
+</mat-list>

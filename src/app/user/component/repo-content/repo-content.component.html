@@ -1,5 +1,33 @@
-<a mat-raised-button class="link" [routerLink]="['/']">Link</a>
-
-<div *ngFor="let d of data">
-  {{ d | json }}
-</div>
+<section>
+  <header class="header">
+    <a mat-button class="link" [routerLink]="['/']">Back</a>
+    <figure class="figure">
+      <img class="avatar__img" [src]="user.avatar_url" alt="{{ user.login + ' avatar' }}" />
+      <figcaption class="figure__text">{{ user.login }}</figcaption>
+    </figure>
+  </header>
+  <main>
+    <h3 class="title--main">Repositories</h3>
+    <div class="card__container">
+      <mat-card *ngFor="let d of data" class="card">
+        <mat-card-header>
+          <mat-card-title>{{ d.name }}</mat-card-title>
+        </mat-card-header>
+        <mat-divider></mat-divider>
+        <mat-card-content>
+          <p class="card__content">
+            {{ d.description }}
+          </p>
+        </mat-card-content>
+        <mat-card-footer class="card__footer">
+          <span class="card__create">{{ d.created_at | date }}</span>
+        </mat-card-footer>
+        <mat-card-actions>
+          <a mat-button [href]="d.url"> link </a>
+          <a mat-button [href]="d.teams_url"> team </a>
+          <a mat-button [href]="d.homepage"> homepage</a>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </main>
+</section>

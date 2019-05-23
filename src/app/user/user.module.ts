@@ -4,12 +4,13 @@ import { RouterModule } from "@angular/router";
 import { SharedModule } from "./../shared/shared.module";
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
+//routes
+import { USER_ROUTES } from "./user.routes";
+//componentts
 import { UserContainerComponent } from "./container/user-container/user-container.component";
 import { UserListComponent } from "./component/user-list/user-list.component";
-import { USER_ROUTES } from "./user.routes";
-import { NgxsModule } from "@ngxs/store";
-import { RepoContainerComponent } from './container/repo-container/repo-container.component';
-import { RepoContentComponent } from './component/repo-content/repo-content.component';
+import { RepoContainerComponent } from "./container/repo-container/repo-container.component";
+import { RepoContentComponent } from "./component/repo-content/repo-content.component";
 
 @NgModule({
   declarations: [UserContainerComponent, UserListComponent, RepoContainerComponent, RepoContentComponent],

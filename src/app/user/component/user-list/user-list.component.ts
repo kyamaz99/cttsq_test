@@ -9,9 +9,8 @@ import { Location } from "@angular/common";
   styleUrls: ["./user-list.component.scss"],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class UserListComponent implements OnInit {
+export class UserListComponent {
   @Input() data: Array<User>;
-  constructor() {}
 
-  ngOnInit() {}
+  constructor() {}
 }
